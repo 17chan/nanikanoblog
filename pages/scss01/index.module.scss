@@ -1,0 +1,103 @@
+
+@import url("https://use.typekit.net/ssb7bpo.css");
+.blogWrapper {
+    // width: 100vw;
+    height: 500px;
+    margin: 0 auto;
+}
+
+$header-height: 171px;
+$slide-height: (calc(100vh - #{$header-height} - 100px));
+
+.slideWrapper {
+    // background-color: #fff;
+    // scroll-snap-type: y mandatory;
+    // height: 100vw;
+    // width: $slide-height;
+    box-sizing: border-box;
+    // padding: 30px 30px;
+    
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    // transform: rotate(-90deg) translateX(calc(-100vh + #{$header-height} + 100px));
+    // transform-origin: left top;
+    
+    
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;  
+    position: relative;
+    
+}
+.blogitemWrapper {
+    // transform: rotate(90deg) translateY(-212px);
+    // transform-origin: top left;
+
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    // scroll-snap-align: start;
+    // position: relative;
+
+}
+.blogitemWrapper:nth-child(1) {
+    // margin-top: calc(50vw - 500px);
+}
+.blogitemWrapper:nth-child(10) {
+    // margin-bottom: calc(50vw - 500px);
+}
+.blogItem {
+    position: relative;
+    margin: 0 auto;
+    width: max-content;
+    height: max-content;
+    display: block;
+    img {
+        padding: 5px;
+        border: solid 1px #707070;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+    }
+    .kind {
+        margin: 0;
+        font-size: 30px;
+
+        font-family: garamond-premier-pro-display,serif;
+        font-weight: 400;
+        font-style: normal;
+
+    }
+    .date {
+        transform: rotate(-90deg) translate(-90px, 5px);
+        transform-origin: left bottom;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        font-size: 14px;
+    }
+    h3 {
+        font-size: 16px;
+        margin: 0;
+        font-weight: lighter;
+    }
+}
+
+.child {
+    // background-color: #fff;
+    margin-right: 80px;
+}
+.parent > div > div{
+    justify-content: center;
+    align-items: center;
+
+}
+.child:first-child {
+    margin-left: calc(50vw - 510px);
+}
+.child:last-child {
+    margin-right: calc(50vw - 515px);
+}
+.child:nth-child(2n) {
+    margin-top: 76px;
+}

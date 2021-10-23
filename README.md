@@ -32,3 +32,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+new を state に持たせる  
+```js
+const [filter, setFilter] = useState("new");
+```
+各カテゴリに boolean を持たせたオブジェクトを作る。名前は FILTER_MAP
+
+```js
+const FILTER_MAP = {
+  All: () => true,
+  Active: (task) => !task.completed,
+  Completed: (task) => task.completed,
+};
+```
+
+Object.keys(FILTER_MAP);関数で key の値だけを取得し FILTER_NAMES 変数として値を保存する。
+
+```js
+const FILTER_NAMES = Object.keys(FILTER_MAP);
+```
+
+各カテゴリを表示するためのコンポーネントを作成する。
+
+```js
+const filterList = FILTER_NAMES.map((name) => (
+  <FilterButton
+    key={name}
+    name={name}
+    isPressed={name === filter}
+    // フィルターをセットするためのstateを渡す
+    setFilter={setFilter}
+  />
+));
+```
